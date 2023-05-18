@@ -25,9 +25,16 @@
 function sir = prepare_photo (im)
   %initializare sirul final.
   sir = zeros (1, 784);
-  
+  [m, n] = size(im);
+  for i=1:m
+    for j=1:n
+      im(i,j) = 255 - im(i,j);
+    endfor
+  endfor
+
   % TODO: inverseaza pixelii imaginii im.
   
   % TODO: transpune imaginea, iar apoi transforma imaginea intr-un vector linie.
+  sir = reshape(im', 1, []);
   % HINT: functia reshape
 endfunction
